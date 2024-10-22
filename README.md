@@ -1,4 +1,4 @@
-<img align="right" width="150" height="150" top="100" src="./assets/banner.jpg">
+<img align="right" width="150" height="150" top="100" src="./apps/interface/src/lib/assets/banner.png">
 
 # Aztec Tools
 
