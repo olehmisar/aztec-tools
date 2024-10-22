@@ -1,4 +1,5 @@
 export { cn } from "../utils.js";
+export { default as CopyableInput } from "./CopyableInput.svelte";
 export { default as CopyButton } from "./CopyButton.svelte";
 export * from "./form";
 export { default as GapContainer } from "./GapContainer.svelte";

@@ -15,42 +15,39 @@
 </svelte:head>
 
 <Ui.GapContainer class="container">
-  <div class="prose">
-    <h1>Secret & hash</h1>
-  </div>
+  <Ui.Card.Root>
+    <Ui.Card.Header>
+      <Ui.Card.Title class="mb-2">Create secret & hash</Ui.Card.Title>
+      <Ui.LoadingButton
+        variant="default"
+        onclick={async () => {
+          const { Fr, computeSecretHash } = await import("@aztec/aztec.js");
+          const secret = Fr.random();
+          const secretHash = computeSecretHash(secret);
+          secretAndHash = {
+            secret: secret.toString(),
+            secretHash: secretHash.toString(),
+          };
+        }}
+      >
+        Create secret & hash
+      </Ui.LoadingButton>
+    </Ui.Card.Header>
 
-  <Ui.LoadingButton
-    variant="default"
-    onclick={async () => {
-      const { Fr, computeSecretHash } = await import("@aztec/aztec.js");
-      const secret = Fr.random();
-      const secretHash = computeSecretHash(secret);
-      secretAndHash = {
-        secret: secret.toString(),
-        secretHash: secretHash.toString(),
-      };
-    }}
-  >
-    Create secret & hash
-  </Ui.LoadingButton>
+    {#if secretAndHash}
+      <Ui.Card.Content>
+        <Ui.GapContainer class="gap-4">
+          <div>
+            Secret
+            <Ui.CopyableInput text={secretAndHash.secret} />
+          </div>
 
-  {#if secretAndHash}
-    <section>
-      <div>
-        Secret
-        <div class="flex gap-2">
-          <Ui.Input value={secretAndHash.secret} />
-          <Ui.CopyButton text={secretAndHash.secret} />
-        </div>
-      </div>
-
-      <div>
-        Secret hash
-        <div class="flex gap-2">
-          <Ui.Input value={secretAndHash.secretHash} />
-          <Ui.CopyButton text={secretAndHash.secretHash} />
-        </div>
-      </div>
-    </section>
-  {/if}
+          <div>
+            Secret hash
+            <Ui.CopyableInput text={secretAndHash.secretHash} />
+          </div>
+        </Ui.GapContainer>
+      </Ui.Card.Content>
+    {/if}
+  </Ui.Card.Root>
 </Ui.GapContainer>

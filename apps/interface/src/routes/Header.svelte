@@ -83,23 +83,20 @@
   </div>
 </header>
 
-<div class="grid grid-cols-4">
-  <aside class="hidden p-4 md:block">
+<div class="grid h-full grid-cols-12">
+  <aside class="col-span-4 hidden border-r p-4 md:block">
     <nav>
       {@render tools()}
     </nav>
   </aside>
 
-  <main class="col-span-full md:col-span-3">
+  <main class="col-span-full md:col-span-8">
     {@render children?.()}
   </main>
 </div>
 
 {#snippet navbar()}
-  <a
-    href={route("/")}
-    class="flex items-center gap-2 font-semibold md:text-base"
-  >
+  <a href={route("/")} class="flex items-center gap-2 font-semibold">
     <img src="/logo.png" alt="logo" class="size-[2em]" />
     {lib.APP_NAME}
   </a>
@@ -126,7 +123,7 @@
     {...props}
     variant="ghost"
     class={Ui.cn(
-      "flex items-center justify-start gap-2 font-semibold",
+      "flex items-center justify-start gap-2",
       isActive(props.href) ? "text-foreground" : "text-muted-foreground",
     )}
   >
