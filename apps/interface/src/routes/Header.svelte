@@ -9,6 +9,7 @@
     Github,
     Menu,
     MessageCirclePlus,
+    Send,
     User,
   } from "lucide-svelte";
   import type { Snippet } from "svelte";
@@ -65,15 +66,19 @@
       </nav>
     </Ui.Sheet.Content>
   </Ui.Sheet.Root>
-  <div
-    class="flex w-full items-center gap-4 md:ml-auto md:w-auto md:gap-2 lg:gap-4"
-  >
+  <div class="flex w-full items-center gap-1 md:ml-auto md:w-auto">
     <div class="grow"></div>
     {@render link({
-      text: "",
+      title: "GitHub",
       href: githubUrl,
       target: "_blank",
       Icon: Github,
+    })}
+    {@render link({
+      title: "Contact developers on Telegram",
+      href: "https://t.me/foustling",
+      target: "_blank",
+      Icon: Send,
     })}
   </div>
 </header>
@@ -108,29 +113,24 @@
 
 {#snippet link({
   text,
-  href,
-  target,
   Icon,
+  ...props
 }: {
-  text: string;
+  text?: string;
   href: string;
   target?: string;
+  title?: string;
   Icon: any;
 })}
-  <a
-    {href}
-    {target}
+  <Ui.Button
+    {...props}
+    variant="ghost"
     class={Ui.cn(
-      "transition-colors hover:text-foreground",
-      isActive(href) ? "text-foreground" : "text-muted-foreground",
+      "flex items-center justify-start gap-2 font-semibold",
+      isActive(props.href) ? "text-foreground" : "text-muted-foreground",
     )}
   >
-    <Ui.Button
-      variant="ghost"
-      class="flex items-center justify-start gap-2 font-semibold"
-    >
-      <Icon />
-      {text}
-    </Ui.Button>
-  </a>
+    <Icon />
+    {text ?? ""}
+  </Ui.Button>
 {/snippet}
