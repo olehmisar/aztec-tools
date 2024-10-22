@@ -7,10 +7,12 @@
   import {
     BookLock,
     Github,
+    Hash,
     Menu,
     MessageCirclePlus,
     Send,
     User,
+    Waves,
   } from "lucide-svelte";
   import type { Snippet } from "svelte";
 
@@ -31,7 +33,9 @@
 
   const links = [
     { text: "Create an account", href: route("/schnorr-account"), Icon: User },
-    { text: "Secret hash", href: route("/secret-hash"), Icon: BookLock },
+    { text: "Secret & hash", href: route("/secret-hash"), Icon: BookLock },
+    { text: "Pedersen hash", href: route("/pedersen"), Icon: Hash },
+    { text: "Poseidon2 hash", href: route("/poseidon2"), Icon: Waves },
     {
       text: "Request a tool",
       href: utils.joinUrl(githubUrl, "/issues/new"),

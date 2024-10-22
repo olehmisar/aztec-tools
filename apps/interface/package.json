@@ -16,6 +16,7 @@
   "dependencies": {
     "@aztec/accounts": "0.57.0",
     "@aztec/aztec.js": "0.57.0",
+    "@aztec/foundation": "0.57.0",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",
     "@tanstack/svelte-query": "^5.59.10",

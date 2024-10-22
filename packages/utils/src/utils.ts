@@ -63,3 +63,10 @@ export function removePrefixOrThrow(str: string, prefix: string) {
 
   return str.slice(prefix.length);
 }
+
+export function removeSuffix(str: string, suffix: string) {
+  if (str.endsWith(suffix)) {
+    return str.slice(0, -suffix.length);
+  }
+  return str;
+}

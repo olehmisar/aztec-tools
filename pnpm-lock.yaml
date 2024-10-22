@@ -28,6 +28,9 @@ importers:
       '@aztec/aztec.js':
         specifier: 0.57.0
         version: 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/foundation':
+        specifier: 0.57.0
+        version: 0.57.0
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
