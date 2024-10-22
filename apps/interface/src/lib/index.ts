@@ -10,8 +10,11 @@ const queryClient = new QueryClient({
   },
 });
 
+const APP_NAME = "Aztec Tools";
+
 const queries = new QueriesService(queryClient);
 
 export const lib = {
   queries,
+  APP_NAME,
 };

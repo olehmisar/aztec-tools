@@ -14,9 +14,13 @@
 </script>
 
 <QueryClientProvider client={lib.queries.queryClient}>
-  <Header />
-
-  {@render children()}
+  <div class="flex h-full flex-col">
+    <Header>
+      <div class="mt-3">
+        {@render children()}
+      </div>
+    </Header>
+  </div>
 
   <Ui.Toaster position="bottom-right" />
 </QueryClientProvider>
