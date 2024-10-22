@@ -4,8 +4,13 @@
   import { route } from "$lib/ROUTES";
   import { Ui } from "@repo/ui";
   import { utils } from "@repo/utils";
-  import { BookLock, Github, MessageCirclePlus } from "lucide-svelte";
-  import Menu from "lucide-svelte/icons/menu";
+  import {
+    BookLock,
+    Github,
+    Menu,
+    MessageCirclePlus,
+    User,
+  } from "lucide-svelte";
   import type { Snippet } from "svelte";
 
   let {
@@ -24,6 +29,7 @@
   const githubUrl = "https://github.com/olehmisar/aztec-tools";
 
   const links = [
+    { text: "Create an account", href: route("/schnorr-account"), Icon: User },
     { text: "Secret hash", href: route("/secret-hash"), Icon: BookLock },
     {
       text: "Request a tool",

@@ -22,6 +22,9 @@ importers:
 
   apps/interface:
     dependencies:
+      '@aztec/accounts':
+        specifier: 0.57.0
+        version: 0.57.0(typescript@5.6.3)(zod@3.23.8)
       '@aztec/aztec.js':
         specifier: 0.57.0
         version: 0.57.0(typescript@5.6.3)(zod@3.23.8)
@@ -225,6 +228,10 @@ packages:
   '@ark/util@0.10.0':
     resolution: {integrity: sha512-uK+9VU5doGMYOoOZVE+XaSs1vYACoaEJdrDkuBx26S4X7y3ChyKsPnIg/9pIw2vUySph1GkAXbvBnfVE2GmXgQ==}
 
+  '@aztec/accounts@0.57.0':
+    resolution: {integrity: sha512-n+RdoaI5UUrGTdojGLlXtc81WfBLNLnTYOUv7o5P9G3MIn5skBT1ed6vkTCks3L/9rV/St+osl2eWavCKhaIqg==}
+    engines: {node: '>=18'}
+
   '@aztec/aztec.js@0.57.0':
     resolution: {integrity: sha512-IywIWQEEdfiY7xQe3iUJXgKm8aV7isYXteouUmCz8OX1JRHzPb34TtMlu/Im91Ax+fiuadHRsILICKP7Y7vcbQ==}
     engines: {node: '>=18'}
@@ -239,6 +246,10 @@ packages:
 
   '@aztec/circuits.js@0.57.0':
     resolution: {integrity: sha512-cHY+35RyUcVIjR8itQuu0mHVkaXV9InkwNiHNW16m7+jAFXO0NLWXU5faleniWrpG/0hTnuFYfYzX5zzPj5mvA==}
+    engines: {node: '>=18'}
+
+  '@aztec/entrypoints@0.57.0':
+    resolution: {integrity: sha512-smu/u0RsOOGeo56gJ2ydMQogEoc/r4jWg/QAmheqnM47pClOrFrjhpWHxIIzAU6P7ZZzQCZeS1T1hyN2bRFdoA==}
     engines: {node: '>=18'}
 
   '@aztec/ethereum@0.57.0':
@@ -3397,6 +3408,24 @@ snapshots:
   '@ark/util@0.10.0':
     optional: true
 
+  '@aztec/accounts@0.57.0(typescript@5.6.3)(zod@3.23.8)':
+    dependencies:
+      '@aztec/aztec.js': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/circuit-types': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/circuits.js': 0.57.0(patch_hash=cunq7g67umbihfnx4mjr6mv7r4)(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/entrypoints': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/ethereum': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/foundation': 0.57.0
+      '@aztec/types': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      tslib: 2.7.0
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
+
   '@aztec/aztec.js@0.57.0(typescript@5.6.3)(zod@3.23.8)':
     dependencies:
       '@aztec/circuit-types': 0.57.0(typescript@5.6.3)(zod@3.23.8)
@@ -3454,6 +3483,22 @@ snapshots:
       tslib: 2.7.0
     transitivePeerDependencies:
       - bufferutil
+      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@aztec/entrypoints@0.57.0(typescript@5.6.3)(zod@3.23.8)':
+    dependencies:
+      '@aztec/aztec.js': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/circuit-types': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/circuits.js': 0.57.0(patch_hash=cunq7g67umbihfnx4mjr6mv7r4)(typescript@5.6.3)(zod@3.23.8)
+      '@aztec/foundation': 0.57.0
+      '@aztec/protocol-contracts': 0.57.0(typescript@5.6.3)(zod@3.23.8)
+      tslib: 2.7.0
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
       - supports-color
       - typescript
       - utf-8-validate

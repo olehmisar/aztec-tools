@@ -14,6 +14,7 @@
     "_chore": "pnpm i"
   },
   "dependencies": {
+    "@aztec/accounts": "0.57.0",
     "@aztec/aztec.js": "0.57.0",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",

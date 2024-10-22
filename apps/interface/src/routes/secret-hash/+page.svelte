@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { lib } from "$lib";
   import { Ui } from "@repo/ui";
 
   let secretAndHash:
@@ -8,6 +9,10 @@
       }
     | undefined = $state();
 </script>
+
+<svelte:head>
+  <title>Secret & hash - {lib.APP_NAME}</title>
+</svelte:head>
 
 <Ui.GapContainer class="container">
   <div class="prose">
