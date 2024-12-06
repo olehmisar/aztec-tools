@@ -6,11 +6,18 @@
   import { Ui } from "@repo/ui";
   import { QueryClientProvider } from "@tanstack/svelte-query";
   import { inject } from "@vercel/analytics";
+  import { onMount } from "svelte";
   import Header from "./Header.svelte";
 
   let { children } = $props();
 
   inject({ mode: dev ? "development" : "production" });
+
+  onMount(async () => {
+    // load bb.js WASM eagerly
+    const { poseidon2Hash } = await import("@aztec/foundation/crypto");
+    console.log("init", poseidon2Hash([]));
+  });
 </script>
 
 <QueryClientProvider client={lib.queries.queryClient}>
