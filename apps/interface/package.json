@@ -14,9 +14,9 @@
     "_chore": "pnpm i"
   },
   "dependencies": {
-    "@aztec/accounts": "0.57.0",
-    "@aztec/aztec.js": "0.57.0",
-    "@aztec/foundation": "0.57.0",
+    "@aztec/accounts": "0.65.2",
+    "@aztec/aztec.js": "0.65.2",
+    "@aztec/foundation": "0.65.2",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",
     "@tanstack/svelte-query": "^5.59.10",

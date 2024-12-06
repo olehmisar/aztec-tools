@@ -39,13 +39,13 @@
           const encryptionKey = Fr.random();
           const salt = Fr.random();
           const accountContract = new SchnorrAccountContract(signingKey);
-          const publicKeysHash = deriveKeys(encryptionKey).publicKeys.hash();
+          const publicKeys = deriveKeys(encryptionKey).publicKeys;
           const instance = getContractInstanceFromDeployParams(
             accountContract.getContractArtifact(),
             {
               constructorArgs: accountContract.getDeploymentArgs(),
               salt,
-              publicKeysHash,
+              publicKeys,
             },
           );
           const completeAddress = CompleteAddress.fromSecretKeyAndInstance(
