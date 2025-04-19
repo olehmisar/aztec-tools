@@ -23,7 +23,7 @@
         onclick={async () => {
           const { Fr, computeSecretHash } = await import("@aztec/aztec.js");
           const secret = Fr.random();
-          const secretHash = computeSecretHash(secret);
+          const secretHash = await computeSecretHash(secret);
           secretAndHash = {
             secret: secret.toString(),
             secretHash: secretHash.toString(),
