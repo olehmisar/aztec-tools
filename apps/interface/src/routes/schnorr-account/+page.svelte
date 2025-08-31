@@ -40,10 +40,12 @@
           const salt = Fr.random();
           const accountContract = new SchnorrAccountContract(signingKey);
           const { publicKeys } = await deriveKeys(encryptionKey);
+          const { constructorArgs } =
+            await accountContract.getDeploymentFunctionAndArgs();
           const instance = await getContractInstanceFromDeployParams(
-            accountContract.getContractArtifact(),
+            await accountContract.getContractArtifact(),
             {
-              constructorArgs: await accountContract.getDeploymentArgs(),
+              constructorArgs,
               salt,
               publicKeys,
             },
